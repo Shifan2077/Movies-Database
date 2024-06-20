@@ -1,11 +1,26 @@
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+body {
+    font-family: Arial, sans-serif;
     padding: 20px;
-    text-align: center;
   }
   
-  #movieList, #movieDetails {
-    margin-top: 20px;
+  input, button {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+  }
+  
+  #movieList div, #movieDetails {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  #movieList div h2, #movieDetails h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  #movieList div p, #movieDetails p {
+    margin: 5px 0;
   }
   
