@@ -1,26 +1,179 @@
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  
-  input, button {
-    padding: 10px;
-    margin: 10px;
-    font-size: 16px;
-  }
-  
-  #movieList div, #movieDetails {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px 0;
-  }
-  
-  #movieList div h2, #movieDetails h2 {
-    margin: 0;
-    font-size: 18px;
-  }
-  
-  #movieList div p, #movieDetails p {
-    margin: 5px 0;
-  }
-  
+  overflow: auto; /* Allow body scroll */
+  height: 100vh;
+  background: url('img1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative; /* Ensure the body is positioned relative for absolute positioning */
+}
+
+canvas#canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.logo-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 250px; /* Adjust size as needed */
+  z-index: 10; /* Ensure logo appears above other content */
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+.search-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#searchInput {
+  width: 300px; /* Adjust input width */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+}
+
+#searchButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #e50914;
+  color: white;
+  cursor: pointer;
+}
+
+#searchButton:hover {
+  background-color: #f6121d;
+}
+
+.profile-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.profile-container img {
+  width: 40px; /* Adjust size as needed */
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Option Menu Styles */
+.option-menu {
+  position: absolute;
+  top: 70px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  z-index: 20;
+  width: 150px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+
+.profile-container:hover .option-menu {
+  max-height: 200px; /* Adjust height based on content */
+}
+
+.option-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.option-menu ul li {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.option-menu ul li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.content {
+  padding: 20px;
+  width: 80%;
+  max-width: 1200px; /* Adjust maximum width as needed */
+  margin: 20px auto;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  text-align: center; /* Center the text */
+  color: white; /* Adjusted text color */
+}
+
+#movieList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid columns */
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-item {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.movie-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.movie-item h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.movie-item p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.movie-item button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  background-color: #e50914;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.movie-item button:hover {
+  background-color: #f6121d;
+}

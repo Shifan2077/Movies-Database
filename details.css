@@ -1,0 +1,141 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 80px; /* Space for fixed header */
+    background: url('img1.jpg') no-repeat center center fixed; /* Background image */
+    background-size: cover;
+    color: #fff;
+}
+
+/* Header styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+    width: 150px;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.profile-container img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.option-menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+}
+
+.profile-container:hover .option-menu {
+    max-height: 200px; /* Adjust height based on content */
+}
+
+.option-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.option-menu ul li {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option-menu ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Content styles */
+.content {
+    padding: 20px;
+    width: 90%;
+    max-width: 1000px; /* Adjust maximum width as needed */
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+#movieDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#movieDetails img {
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#movieDetails h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+#movieDetails p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#castList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#castList div {
+    margin: 10px;
+    text-align: center;
+}
+
+#castList img {
+    max-width: 100px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+#castList p {
+    font-size: 14px;
+    margin: 0;
+}

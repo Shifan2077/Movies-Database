@@ -2,17 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Movie Database</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Search</title>
+  <link rel="stylesheet" href="search.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Movie Database</h1>
+  <div class="logo-container">
+    <img src="Logo.png" alt="Cinevault Logo" class="logo">
+  </div>
+  <div class="search-container">
     <input type="text" id="searchInput" placeholder="Search for a movie...">
     <button id="searchButton">Search</button>
-    <div id="movieList"></div>
-    <div id="movieDetails"></div>
   </div>
-  <script src="app.js"></script>
+  <div class="profile-container">
+    <img src="boy.png" alt="Profile Photo">
+    <div class="option-menu">
+      <ul>
+        <li>Profile</li>
+        <li>Account</li>
+        <li>Settings</li>
+        <li>Sign Out</li>
+      </ul>
+    </div>
+  </div>
+  <div id="moviesContainer" class="movies-container"></div>
+  <script src="search.js"></script>
+  <script src="trending.js"></script>
 </body>
 </html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      position: relative;
+      margin: 0;
+      padding-top: 80px; /* Space for fixed header */
+      background-image: url('img1.jpg'); /* Background image */
+      background-size: cover; /* Cover the entire screen */
+      background-position: center; /* Center the background image */
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-container {
+      width: 250px;
+    }
+
+    .logo {
+      width: 100%;
+      height: auto;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    #searchInput {
+      width: 300px; /* Adjust input width */
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      margin-right: 10px;
+    }
+
+    #searchButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      background-color: #e50914;
+      color: white;
+      cursor: pointer;
+    }
+
+    #searchButton:hover {
+      background-color: #f6121d;
+    }
+
+    .profile-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-container img {
+      width: 40px; /* Adjust size as needed */
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    /* Option Menu Styles */
+    .option-menu {
+      position: absolute;
+      top: 70px; /* Adjust as needed */
+      right: 0;
+      z-index: 10;
+      width: 150px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease-out;
+    }
+
+    .profile-container:hover .option-menu {
+      max-height: 200px; /* Adjust height based on content */
+    }
+
+    .option-menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .option-menu ul li {
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .option-menu ul li:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .content {
+      padding: 20px;
+      width: 80%;
+      max-width: 1200px; /* Adjust maximum width as needed */
+      margin: 20px auto;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      text-align: center; /* Center the text */
+      color: white; /* Adjusted text color */
+    }
+
+    #movieList {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid columns */
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .movie-item {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .movie-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .movie-item h2 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .movie-item p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .movie-item button {
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 5px;
+      border: none;
+      background-color: #e50914;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .movie-item button:hover {
+      background-color: #f6121d;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo-container">
+      <img src="Logo.png" alt="Cinevault Logo" class="logo">
+    </div>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search for a movie...">
+      <button id="searchButton">Search</button>
+    </div>
+    <div class="profile-container">
+      <img src="boy.png" alt="Profile Photo">
+      <div class="option-menu">
+        <ul>
+          <li>Profile</li>
+          <li>Account</li>
+          <li>Settings</li>
+          <li>Sign Out</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <h1>Search Results</h1>
+    <div id="movieList"></div>
+  </div>
+  <script src="search.js"></script>
+  <script src="results.js"></script>
+</body>
+</html>
