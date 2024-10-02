@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="settiings.css">
+</head>
+<body>
+    <div class="settings-container">
+        <h1>Settings</h1>
+        <div class="settings-section">
+            <h2>Account Settings</h2>
+            <form>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email">
+                <label for="password">Change Password:</label>
+                <input type="password" id="password" name="password">
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+
+        <div class="settings-section">
+            <h2>Notification Settings</h2>
+            <form>
+                <label for="email-notifications">Email Notifications:</label>
+                <select id="email-notifications" name="email-notifications">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="never">Never</option>
+                </select>
+                <label for="push-notifications">Push Notifications:</label>
+                <select id="push-notifications" name="push-notifications">
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                </select>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+
+        <div class="settings-section">
+            <h2>Privacy Settings</h2>
+            <form>
+                <label for="profile-visibility">Profile Visibility:</label>
+                <select id="profile-visibility" name="profile-visibility">
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                    <option value="friends">Friends Only</option>
+                </select>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+
+        <div class="settings-section">
+            <h2>Display Settings</h2>
+            <form>
+                <label for="theme">Theme:</label>
+                <select id="theme" name="theme">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="system">System Default</option>
+                </select>
+                <label for="text-size">Text Size:</label>
+                <input type="range" id="text-size" name="text-size" min="10" max="30">
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
